@@ -39,6 +39,8 @@ access to your Home Assistant configuration via FTP.
 
 [:books: Read the full add-on documentation][docs]
 
+- Deurstijl addition:  USB-drive support (/dev/sda1 will be mounted on /ftproot/)
+
 ## Support
 
 Got questions?

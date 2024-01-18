@@ -1,10 +1,9 @@
 ---
-name: FTP
+name: FTP-with-USB-support
 version: dev
-slug: ftp
-description: A secure and fast FTP server for Home Assistant
-url: https://github.com/hassio-addons/addon-ftp
-codenotary: codenotary@frenck.dev
+slug: ftp-with-USB-support
+description: A secure and fast FTP server for Home Assistant with USB support, forked from addon-ftp.
+url: https://github.com/deurstijl/addon-ftp
 startup: services
 arch:
   - aarch64
@@ -15,6 +14,9 @@ host_network: true
 privileged:
   - SYS_ADMIN
 apparmor: false
+devices:
+  - /dev/sda
+  - /dev/sda1
 map:
   - addons:rw
   - backup:rw

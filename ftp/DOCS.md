@@ -12,19 +12,20 @@ home directories.
 Of course, if you'd really want to, you could also use this add-on to again
 access to your Home Assistant configuration via FTP.
 
+Addition by @deurstijl: Added USB-drive support for /dev/sda1
+
 ## Installation
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
-
-1. Click the Home Assistant My button below to open the add-on on your Home
-   Assistant instance.
-
-   [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
-
-1. Click the "Install" button to install the add-on.
-1. Start the "FTP" add-on
-1. Check the logs of the "FTP" add-on to see if everything went well.
+Since this is not in the hassio repository, installation can be done as follows:
+- Copy the contents of the `ftp` folder to the `/mnt/data/supervisor/addons/local/ftp` folder. This can be done using SCP or other tools.
+- In the GUI, go to:
+  - Settings
+  - Add-ons
+  - Click ADD-ON STORE
+  - In the Top-right menu, click on `Check for Updates`
+  - Go back and visit the ADD-ON STORE again.
+  - The `FTP-with-USB-support` should now be visible in the `Local add-ons` section.
+  - Install.
 
 ## Configuration
 

@@ -1,0 +1,17 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: FTP-Deurstijl
+# Mounts /dev/sda1 to /ftproot/
+# ==============================================================================
+echo "Mounting the drive"
+if mount /dev/sda1 /ftproot/ 2>&1
+then
+	echo "Mounting Successfull, creating folders"
+	mkdir -p /ftproot/empty
+	mkdir -p /ftproot/users
+else
+	echo "Mounting Failed"
+fi
+
+
