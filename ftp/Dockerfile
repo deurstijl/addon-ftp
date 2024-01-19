@@ -12,30 +12,29 @@ RUN \
         gcc=13.2.1_git20231014-r0 \
         linux-pam-dev=1.5.3-r7 \
         make=4.4.1-r2 \
-        musl-dev=1.2.4_git20230717-r4 \
-    \
-    && cd /tmp \
+        musl-dev=1.2.4_git20230717-r4 
+
+RUN cd /tmp \
     && curl -sSL https://github.com/tiwe-de/libpam-pwdfile/archive/v1.0.tar.gz \
         | tar xz --strip 1 \
     && make \
     && make install \
-    && cd - \
-    \
-    && apk add --no-cache \
-        openssl \
-        vsftpd=3.0.5-r2 \
-    \
-    && apk del --no-cache --purge .build-dependencies \
-    \
-    && mkdir -p \
-        /ftproot/empty \
-        /ftproot/users \
-        /etc/vsftpd/users \
-    \
-    && rm -f -r \
+    && cd - 
+
+RUN apk update \
+    && apk add --no-cache vsftpd=3.0.5-r2 \
+    && apk add --no-cache openssl=3.1.4-r4
+    
+RUN apk del --no-cache --purge .build-dependencies 
+    
+RUN mkdir -p \
+        /ftproot/ \
+        /etc/vsftpd/users 
+    
+RUN rm -f -r \
         /tmp/*
 
- # Copy root filesystem
+# Copy root filesystem
 COPY rootfs /
 
 # Build arguments

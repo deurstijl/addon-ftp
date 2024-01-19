@@ -12,6 +12,8 @@ then
 	mkdir -p /ftproot/users
 else
 	echo "Mounting Failed"
+	exit 1
 fi
+
 
 

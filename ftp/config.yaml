@@ -1,7 +1,7 @@
 ---
 name: FTP-with-USB-support
 version: dev
-slug: ftp-with-USB-support
+slug: ftp-with-ftp-support
 description: A secure and fast FTP server for Home Assistant with USB support, forked from addon-ftp.
 url: https://github.com/deurstijl/addon-ftp
 startup: services
